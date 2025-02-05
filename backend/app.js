@@ -1,8 +1,9 @@
+require("dotenv").config();
 const express = require("express");//backend comunnication
 const path = require("path");//determinate images package local
 const cors = require("cors");//Frontend access to project
 
-const port = 5000;
+const port = process.env.PORT;
 
 const app = express();
 
