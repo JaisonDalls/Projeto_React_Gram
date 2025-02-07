@@ -26,7 +26,7 @@ Para que este projeto funcione corretamente, utilizamos algumas bibliotecas esse
 
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/JaisonDalls/Projeto_React_Gram.git
    ```
 
 2. Instale as dependências:
@@ -37,7 +37,8 @@ Para que este projeto funcione corretamente, utilizamos algumas bibliotecas esse
 3. Crie um arquivo **.env** e configure suas variáveis de ambiente:
    ```sh
    MONGO_URI=sua_conexao_do_mongodb
-   JWT_SECRET=sua_chave_secreta
+   DB_USER=seu_usuario_mongodb
+   DB_PASS=sua_chave_secreta
    ```
 
 4. Inicie o servidor:
@@ -56,8 +57,8 @@ Para que este projeto funcione corretamente, utilizamos algumas bibliotecas esse
 ## 📞 Contato
 Caso tenha dúvidas ou sugestões, fique à vontade para contribuir ou entrar em contato! 😊
 
-📧 Email: [seuemail@email.com](mailto:seuemail@email.com)  
-🐙 GitHub: [seu-usuario](https://github.com/seu-usuario)  
+📧 Email: [jaisondalls@gmail.com](mailto:jasiondalls@email.com)  
+🐙 GitHub: [jaisondalls](https://github.com/JaisonDalls)  
 
 ---
 💙 Desenvolvido com dedicação para aprendizado e prática!
