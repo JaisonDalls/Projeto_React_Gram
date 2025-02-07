@@ -37,9 +37,9 @@ Para que este projeto funcione corretamente, utilizamos algumas bibliotecas esse
 3. Crie um arquivo **.env** e configure suas variáveis de ambiente:
    ```sh
    PORT=5000
-   DB_USER=jaisondalls
-   DB_PASSWORD=mBFxVZziznOZ5eJJ
-   JWT_SECRET=jaisonDalls
+   DB_USER=seu_user
+   DB_PASSWORD=seua_senha
+   JWT_SECRET=sua_senha
    ```
 
 4. Inicie o servidor:
