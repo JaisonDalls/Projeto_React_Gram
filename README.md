@@ -36,9 +36,10 @@ Para que este projeto funcione corretamente, utilizamos algumas bibliotecas esse
 
 3. Crie um arquivo **.env** e configure suas variáveis de ambiente:
    ```sh
-   MONGO_URI=sua_conexao_do_mongodb
-   DB_USER=seu_usuario_mongodb
-   DB_PASS=sua_chave_secreta
+   PORT=5000
+   DB_USER=jaisondalls
+   DB_PASSWORD=mBFxVZziznOZ5eJJ
+   JWT_SECRET=jaisonDalls
    ```
 
 4. Inicie o servidor:
