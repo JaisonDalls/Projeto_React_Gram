@@ -22,8 +22,7 @@ const register = async (req, res) => {
     }
 
     //Generate password hash
-    const salt = await bcrypt.genSalt();
-    const passwordHash = await bcrypt.hash(password, salt);
+    const passwordHash = await generateHashPassword(password);
 
     //Create user
     const newUser = await User.create({
@@ -80,8 +79,32 @@ const getCurrentUser = async (req, res) => {
     });
 }
 
+const update = async (req, res) => {
+    const {name, password, bio} = req.body;
+    const user = await User.findById(req.user._id).select("-password");
+
+    let profileImage = null;
+
+    if(req.file) profileImage = req.file.filename;
+    if(name) user.name = name;
+    if(password) await generateHashPassword(password);
+    if(bio) user.bio = bio;   
+    if(profileImage) user.profileImage = profileImage; 
+
+    await user.save();
+
+    res.status(200).json(user);
+}
+
 module.exports = {
     register,
     login,
-    getCurrentUser
+    getCurrentUser,
+    update
 };
+
+async function generateHashPassword(password) {
+    const salt = await bcrypt.genSalt();
+    const passwordHash = await bcrypt.hash(password, salt);
+    return passwordHash;
+}
