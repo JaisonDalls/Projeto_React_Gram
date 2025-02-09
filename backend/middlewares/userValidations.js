@@ -23,4 +23,14 @@ const userCreateValidation = () => {
     ]
 }
 
-module.exports = {userCreateValidation};
+const loginValidation = () =>{
+    return [
+        body('email')
+        .isString().withMessage("Favor insira seu e-mail!")
+        .isEmail().withMessage("Insira um e-mail válido!"),
+        body('password')
+        .isString().withMessage("Insira sua senha!")
+    ]
+}
+
+module.exports = {userCreateValidation, loginValidation};
