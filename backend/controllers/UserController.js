@@ -96,11 +96,27 @@ const update = async (req, res) => {
     res.status(200).json(user);
 }
 
+//Get user by id
+const getUserById = async (req, res) => {
+    const {id} = req.params;
+    
+    try {
+        const user = await User.findById(id).select('-password');
+        if(!user) return res.status(404).json({errors: ["Usuário não encontrado!"]});
+        
+        //Check if user exists        
+        res.status(200).json(user);
+    } catch (error) {
+        return res.status(422).json({errors: ["Usuário não encontrado!"]})
+    }
+}
+
 module.exports = {
     register,
     login,
     getCurrentUser,
-    update
+    update,
+    getUserById
 };
 
 async function generateHashPassword(password) {
