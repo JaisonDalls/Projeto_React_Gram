@@ -3,11 +3,21 @@ const {Schema} = mongoose;
 
 const photoSchema = new Schema(
     {
-        imagePath: String,
-        title: String,
+        imagePath: {
+            type: String,
+            required: true
+        },
+        title: {
+            type: String,
+            required: true
+        },
         likes: Array,
         comments: Array,
-        userId: mongoose.ObjectId,
+        userId: {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            required: true
+        },
         userName: String
     },
     {

@@ -82,18 +82,23 @@ const getCurrentUser = async (req, res) => {
 const update = async (req, res) => {
     const {name, password, bio} = req.body;
     const user = await User.findById(req.user._id).select("-password");
-
     let profileImage = null;
 
-    if(req.file) profileImage = req.file.filename;
-    if(name) user.name = name;
-    if(password) await generateHashPassword(password);
-    if(bio) user.bio = bio;   
-    if(profileImage) user.profileImage = profileImage; 
+    try {
+        if(req.file) profileImage = req.file.filename;
+        if(name) user.name = name;
+        if(password) user.password = await generateHashPassword(password);
+        if(bio) user.bio = bio;   
+        if(profileImage) user.profileImage = profileImage; 
 
-    await user.save();
+        await user.save();
 
-    res.status(200).json(user);
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(422).json({errors: ["Não foi possível atualizar usuário!"]});
+    }
+
+    
 }
 
 //Get user by id
@@ -102,12 +107,22 @@ const getUserById = async (req, res) => {
     
     try {
         const user = await User.findById(id).select('-password');
+        //Check if user exists      
         if(!user) return res.status(404).json({errors: ["Usuário não encontrado!"]});
         
-        //Check if user exists        
         res.status(200).json(user);
     } catch (error) {
         return res.status(422).json({errors: ["Usuário não encontrado!"]})
+    }
+}
+
+//Get all users
+const getUsers = async(req, res) =>{
+    try {
+        const users = await User.find().select("-password");
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(422).json({errors: ["Não foi possível buscar usuários!"]});
     }
 }
 
@@ -116,7 +131,8 @@ module.exports = {
     login,
     getCurrentUser,
     update,
-    getUserById
+    getUserById,
+    getUsers
 };
 
 async function generateHashPassword(password) {
