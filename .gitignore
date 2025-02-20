@@ -1,0 +1,47 @@
+# Dependências do Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Logs
+logs
+*.log
+logs/*.log
+npm-debug.log*
+yarn-debug.log*
+debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diretórios do sistema
+.DS_Store
+Thumbs.db
+
+# Cache e arquivos de build
+dist/
+build/
+coverage/
+.cache/
+
+# Configurações do Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Configurações do Nodemon
+nodemon-debug.log
+
+# Arquivos de upload do Multer (caso esteja salvando localmente)
+uploads/
+temp/
