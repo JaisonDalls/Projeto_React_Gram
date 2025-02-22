@@ -9,7 +9,10 @@ Bem-vindo ao repositório do **Instagram Clone**! 🚀 Este é um projeto desenv
 
 ## 📂 Dependências do Projeto
 
-Para que este projeto funcione corretamente, utilizamos algumas bibliotecas essenciais:
+
+### Backend
+
+Para que o backend funcione corretamente, utilizamos as seguintes bibliotecas:
 
 | 📦 Dependência  | 📌 Função |
 |---------------|----------|
@@ -21,6 +24,24 @@ Para que este projeto funcione corretamente, utilizamos algumas bibliotecas esse
 | **mongoose** 🗄 | Biblioteca para modelar dados e interagir com o MongoDB. |
 | **multer** 📸 | Utilizado para o upload de imagens e arquivos. |
 | **nodemon** 🔄 | Reinicia automaticamente o servidor quando há alterações no código durante o desenvolvimento. |
+
+### Frontend
+
+As dependências de frontend incluem as bibliotecas essenciais para o desenvolvimento da interface de usuário:
+
+| 📦 Dependência  | 📌 Função |
+|---------------|----------|
+| **@reduxjs/toolkit** 🛠 | Biblioteca para gerenciamento de estado global da aplicação. |
+| **@testing-library/dom** 🧪 | Utilizado para realizar testes em componentes React. |
+| **@testing-library/jest-dom** 🧪 | Extensões para o Jest, facilitando a verificação de elementos DOM em testes. |
+| **@testing-library/react** 🧪 | Ferramenta de teste para renderizar componentes React em testes. |
+| **@testing-library/user-event** 🧪 | Simula eventos de usuário para testar interações. |
+| **react** ⚛️ | Biblioteca para construção de interfaces de usuário. |
+| **react-dom** ⚛️ | Fornece a interface de renderização para os componentes React no DOM. |
+| **react-icons** 🔲 | Biblioteca com ícones para a interface de usuário. |
+| **react-router-dom** 🛣 | Roteamento para navegação entre páginas da aplicação. |
+| **react-scripts** 🛠 | Scripts padrão para criação de aplicativos React. |
+| **web-vitals** 📊 | Utilizado para medir e otimizar o desempenho da aplicação. |
 
 ## 🚀 Como Executar o Projeto
 
