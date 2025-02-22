@@ -1,0 +1,38 @@
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+  color: white;
+  padding: 0.1em 1em;
+}
+#search-form{
+    position: relative;
+    width: 30%;
+}
+#search-form svg{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+#search-form input{
+    width: 100%;
+    padding: 0.5em 2em;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    margin: 0;
+}
+#nav-links{
+    display: flex;
+    align-items: center;
+}
+#nav-links li{
+    margin-right: 1em;
+}
+#nav-links span:hover{
+    cursor: pointer;
+}
+#nav-links svg{
+    font-size: 1.5em;
+}

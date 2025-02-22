@@ -1,0 +1,9 @@
+#footer {
+  height: 12em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ccbdbd;
+  background-color: #515bd4; /* Azul Instagram */
+  color: white;
+}
