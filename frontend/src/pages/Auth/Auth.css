@@ -1,0 +1,52 @@
+:root {
+    --instagram-gradient: linear-gradient(90deg, #f58529, #dd2a7b, #8134af);
+  }
+
+#login,
+#register{
+    border: 1px solid #363636;
+    background: rgba(9, 5, 250, 0.3);
+    padding: 1.5em 2em;
+    max-width: 33%;
+    margin: 2em auto;
+}
+#login h2,
+#register h2{
+    background: var(--instagram-gradient);
+    font-size: 2.1em;
+    text-align: center;
+    margin-top: 0;
+    background-clip: text; /* Faz o gradiente ser aplicado no texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o gradiente */
+    color: transparent; 
+}
+.subtitle{
+    color: rgb(5, 9, 63);
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 0;
+}
+#login form,
+#register form{
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid #363636;
+}
+#login p,
+#register p{
+    text-align: center;
+    margin-top: 0;
+}
+#login p a,
+#register p a{
+    font-weight: bold;
+    color: #515bd4;
+}
+#login .error-message,
+#register .error-message{
+    color: #7a1818;
+    background-color: #ec81b1;
+    padding: 1em;
+    text-align: center;
+    margin-top: 0;
+}
