@@ -11,15 +11,7 @@ const userCreateValidation = () => {
         body('password')
         .isString().withMessage("A senha é obrigatória!")
         .isLength({min:5}).withMessage("A senha deve conter no mínimo 5 caracteres!")
-        .isStrongPassword().withMessage("A senha precisa ser forte!"),
-        body("confirmpassword")
-        .isString().withMessage("Confirme a sua senha!")
-        .custom((value, {req})=>{
-            if(value != req.body.password) {
-                throw new Error("As senhas não são iguais");
-            }
-            return true;
-        })
+        .isStrongPassword().withMessage("A senha precisa ser forte!")
     ]
 }
 
