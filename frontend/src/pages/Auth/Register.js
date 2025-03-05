@@ -4,7 +4,11 @@ import "./Auth.css";
 import { Link } from "react-router-dom";
 
 // Hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+//Redux
+import { register, reset } from "../../slices/authSlice";
 
 /**
  * Componente Register
@@ -39,15 +43,15 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");  // Mensagem de erro, caso haja
 
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.auth);
+
   // Função para lidar com o envio do formulário
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // Validação simples para garantir que as senhas correspondem
-    if (password !== confirmPassword) {
-      setErrorMessage("As senhas não coincidem!");
-      return;
-    }
+    if (password !== confirmPassword) return setErrorMessage("As senhas não coincidem!");
 
     const user = {
       name,
@@ -57,10 +61,19 @@ const Register = () => {
 
     console.log(user);
     
+    dispatch(register(user));
 
     // Limpar mensagem de erro se a validação for bem-sucedida
     setErrorMessage("");
   };
+
+  //Clean all auth states
+  useEffect(() => {
+    if (error) {
+      setErrorMessage(error);
+      dispatch(reset());
+    }
+  }, [error, dispatch]);
 
   return (
     <div id="register">
