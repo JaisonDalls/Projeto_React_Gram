@@ -21,7 +21,16 @@ const loginValidation = () =>{
         .isString().withMessage("Favor insira seu e-mail!")
         .isEmail().withMessage("Insira um e-mail válido!"),
         body('password')
-        .isString().withMessage("Insira sua senha!")
+        .isString().withMessage("Insira sua senha!"),
+        body('confirmPassword')
+        .isString()
+        .withMessage("Confirme a sua senha!")
+        .custom((value, {req})=>{
+            if(value != req.body.password){
+                throw new Error("As senhas não coincidem!");
+            }
+            return true;
+        })
     ]
 }
 
