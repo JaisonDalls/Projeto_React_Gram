@@ -1,11 +1,16 @@
 .message{
     border-radius: 5px;
-    padding: 0;
+    padding: 1em;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #000;
+
+    & p{
+        margin: 0;
+        padding: 0;
+    }
 }
 .message.error{
     color: #721c24;
